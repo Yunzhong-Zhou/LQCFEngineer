@@ -1,21 +1,463 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.chetu.engineer">
+    <!--网络权限问题-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--用于获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!--用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!--用于申请调用A-GPS模块-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <!--8.0安装需要的权限-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!--读写权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--读取手机信息-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--打电话-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 相机 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!--9.0权限-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- Android Q后台定位权限-->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <uses-permission
+        android:name="android.permission.CHANGE_CONFIGURATION"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- 硬件加速对X5视频播放非常重要，建议开启 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+
+    <!--录音权限-->
+    <!--<uses-permission android:name="android.permission.RECORD_AUDIO" />-->
+
+
+    <!-- Camera features - recommended -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+    <!-- 振动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:maxAspectRatio="2.4"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:resizeableActivity="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="com.chetu.engineer.MainActivity">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:windowIsTranslucent="false">
+        <activity
+            android:name=".activity.HelloActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"><!--//全屏-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.GuideActivity"
+            android:label="引导页"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="主页"
+            android:theme="@style/DefaultCityPickerTheme">
+            <!--点击通知默认打开-->
+            <intent-filter>
+                <action android:name="${applicationId}.default.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="登录" />
+        <activity
+            android:name=".activity.BindingPhoneActivity"
+            android:label="绑定手机" />
+        <activity
+            android:name=".activity.WebContentActivity"
+            android:label="网页" />
+        <activity
+            android:name=".activity.MapNavigationActivity"
+            android:label="导航" />
+        <activity
+            android:name=".activity.SearchActivity"
+            android:label="搜索" />
+        <activity
+            android:name=".activity.ChePaiScannerActivity"
+            android:label="车牌识别" />
+        <!--首页-->
+        <activity
+            android:name=".activity.PartActivity"
+            android:label="配件" />
+        <activity
+            android:name=".activity.ProductListActivity"
+            android:label="商品列表" />
+        <activity
+            android:name=".activity.ProductDetailActivity"
+            android:label="商品列表" />
+        <!--工作台-->
+        <activity
+            android:name=".activity.DraftActivity"
+            android:label="草稿" />
+        <activity
+            android:name=".activity.SignInActivity"
+            android:label="签到" />
+        <activity
+            android:name=".activity.DaiJieCheActivity"
+            android:label="待接车" />
+        <activity
+            android:name=".activity.AddJieCheActivity"
+            android:label="接车" />
+        <activity
+            android:name=".activity.DaiFenPeiActivity"
+            android:label="待分配" />
+        <activity
+            android:name=".activity.OrderDetailActivity"
+            android:label="订单详情" />
+        <activity
+            android:name=".activity.AddProjectActivity"
+            android:label="添加项目" />
+        <activity
+            android:name=".activity.DaiShiGongActivity"
+            android:label="待施工" />
+        <activity
+            android:name=".activity.JinXingZhongActivity"
+            android:label="进行中" />
+        <activity
+            android:name=".activity.DaiFuJianActivity"
+            android:label="待复检" />
+        <activity
+            android:name=".activity.YiWanGongActivity"
+            android:label="已完工" />
+        <activity
+            android:name=".activity.YiFuKuanActivity"
+            android:label="已付款" />
+        <activity
+            android:name=".activity.YiTiCheActivity"
+            android:label="已提车" />
+        <activity
+            android:name=".activity.JiuYuanActivity"
+            android:label="救援" />
+        <activity
+            android:name=".activity.AddServiceActivity"
+            android:label="添加服务" />
+        <activity
+            android:name=".activity.SelectGoodsActivity"
+            android:label="选择商品" />
+        <activity
+            android:name=".activity.AddGoodsActivity"
+            android:label="添加商品" />
+        <activity
+            android:name=".activity.SelectServiceActivity"
+            android:label="选择服务" />
+        <!--门店-->
+        <activity
+            android:name=".activity.StoreDetailActivity"
+            android:label="门店详情" />
+
+        <!--论坛-->
+        <activity
+            android:name=".activity.ReMenHuoDongActivity"
+            android:label="热门活动" />
+        <activity
+            android:name=".activity.ReMenHuoDongDetailActivity"
+            android:label="热门活动详情" />
+        <activity
+            android:name=".activity.AddHuoDongActivity"
+            android:label="发布活动" />
+        <activity
+            android:name=".activity.QiuZhiZhaoPingActivity"
+            android:label="求职招聘" />
+        <activity
+            android:name=".activity.QiuZhiZhaoPingDetailActivity"
+            android:label="求职招聘详情" />
+        <activity
+            android:name=".activity.QiuZhiZhaoPingDetailActivity1"
+            android:label="求职招聘详情" />
+        <activity
+            android:name=".activity.AddZhaoPingActivity"
+            android:label="发布招聘" />
+        <activity
+            android:name=".activity.JiShuJiaoLiuActivity"
+            android:label="技术交流" />
+        <activity
+            android:name=".activity.AddJiShuJiaoLiuActivity"
+            android:label="发布技术交流" />
+        <activity
+            android:name=".activity.JiShuJiaoLiuDetailActivity"
+            android:label="技术交流详情" />
+        <activity
+            android:name=".activity.WeiXiuAnLiActivity"
+            android:label="维修案例" />
+        <activity
+            android:name=".activity.AddWeiXiuAnLiActivity"
+            android:label="发布维修案例" />
+        <activity
+            android:name=".activity.WeiXiuAnLiDetailActivity"
+            android:label="维修案例详情" />
+        <activity
+            android:name=".activity.JiYouQiuZhuActivity"
+            android:label="机友求助" />
+        <activity
+            android:name=".activity.JiYouQiuZhuDetailActivity"
+            android:label="机友求助详情" />
+        <activity
+            android:name=".activity.AddJIYouQiuZhuActivity"
+            android:label="发布机友求助" />
+        <activity
+            android:name=".activity.GongJuZuLinActivity"
+            android:label="工具租赁" />
+        <activity
+            android:name=".activity.AddGongJuZuLinActivity"
+            android:label="发布工具租赁" />
+        <activity
+            android:name=".activity.GongJuZhuLinDetailActivity"
+            android:label="工具租赁详情" />
+        <activity
+            android:name=".activity.GongJuZhuLinDetailActivity1"
+            android:label="工具租赁详情" />
+        <activity
+            android:name=".activity.DianPuChuZuActivity"
+            android:label="店铺出租" />
+        <activity
+            android:name=".activity.AddDianPuChuZuActivity"
+            android:label="发布店铺出租" />
+        <activity
+            android:name=".activity.DianPuChuZhuDetailActivity"
+            android:label="店铺出租详情" />
+        <activity
+            android:name=".activity.KuCunPeiJianActivity"
+            android:label="库存配件" />
+        <activity
+            android:name=".activity.AddKuCunPeiJianActivity"
+            android:label="发布库存配件" />
+        <activity
+            android:name=".activity.KuCunPeiJianDetailActivity"
+            android:label="库存配件详情" />
+        <!--我的-->
+        <activity
+            android:name=".activity.SetUpActivity"
+            android:label="系统设置" />
+        <activity
+            android:name=".activity.FeedBackActivity"
+            android:label="意见反馈" />
+        <activity
+            android:name=".activity.VersionActivity"
+            android:label="版本说明" />
+        <activity
+            android:name=".activity.PersonalSettingActivity"
+            android:label="个性设置" />
+        <activity
+            android:name=".activity.ChangePhoneActivity"
+            android:label="修改手机" />
+        <activity
+            android:name=".activity.UnbundleStoreActivity"
+            android:label="解绑门店" />
+        <activity
+            android:name=".activity.BindingAlipayActivity"
+            android:label="绑定支付宝" />
+        <activity
+            android:name=".activity.VerifiedActivity"
+            android:label="实名认证" />
+        <activity
+            android:name=".activity.MyPublishActivity"
+            android:label="我的发布" />
+        <activity
+            android:name=".activity.MyWalletActivity"
+            android:label="我的钱包" />
+        <activity
+            android:name=".activity.TransactionDetailActivity"
+            android:label="交易明细" />
+        <activity
+            android:name=".activity.TakeCashActivity"
+            android:label="提现" />
+        <activity
+            android:name=".activity.SelectAccountActivity"
+            android:label="选择账户" />
+        <activity
+            android:name=".activity.AddBankCardActivity"
+            android:label="添加银行卡" />
+        <activity
+            android:name=".activity.BankCardScannerActivity"
+            android:label="识别银行卡" />
+        <activity
+            android:name=".activity.PayPasswordActivity"
+            android:label="支付密码" />
+        <activity
+            android:name=".activity.IntegralActivity"
+            android:label="积分" />
+        <activity
+            android:name=".activity.MyProfileActivity"
+            android:label="我的资料" />
+        <activity
+            android:name=".activity.AddResumeActivity"
+            android:label="添加履历" />
+        <activity
+            android:name=".activity.MyCollectionActivity"
+            android:label="我的收藏" />
+        <activity
+            android:name=".activity.MyOrderActivity"
+            android:label="我的订单" />
+        <activity
+            android:name=".activity.MyCommentActivity"
+            android:label="我的评价" />
+        <activity
+            android:name=".activity.MyBaoJiaActivity"
+            android:label="我的报价" />
+        <activity
+            android:name=".activity.BaoJiaDetailActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:label="报价详情" />
+        <activity
+            android:name=".activity.BaoJiaDetailActivity1"
+            android:windowSoftInputMode="adjustPan"
+            android:label="报价详情" />
+        <activity
+            android:name=".activity.ComplaintListActivity"
+            android:label="投诉记录" />
+        <activity
+            android:name=".activity.AppealActivity"
+            android:label="申诉" />
+        <activity
+            android:name=".activity.ReplyActivity"
+            android:label="回复" />
+        <activity
+            android:name=".activity.InviteActivity"
+            android:label="邀请有礼" />
+
+        <activity
+            android:name=".activity.CouponActivity"
+            android:label="优惠券" />
+        <activity
+            android:name=".activity.WaitingReleaseActivity"
+            android:label="待发布" />
+        <activity
+            android:name=".activity.NotebookActivity"
+            android:label="记事本" />
+        <activity
+            android:name=".activity.AddNotebookActivity"
+            android:label="添加记事本" />
+        <activity
+            android:name=".activity.FootprintActivity"
+            android:label="足迹" />
+        <activity
+            android:name=".activity.TiWenListActivity"
+            android:label="提问列表" />
+        <activity
+            android:name=".activity.PingLunListActivity"
+            android:label="评论列表" />
+        <activity
+            android:name=".activity.MyGarageActivity"
+            android:label="我的车库" />
+        <activity
+            android:name=".activity.AddCarActivity"
+            android:label="添加车辆" />
+        <activity
+            android:name=".activity.AddCarModelActivity"
+            android:label="选择车型" />
+        <activity
+            android:name=".activity.AddMerchantActivity"
+            android:label="申请加盟-商户入驻-添加商户" />
+        <activity
+            android:name=".activity.ServiceCenterActivity"
+            android:label="客服中心" />
+
+
+        <!--识别银行卡-->
+        <activity android:name="io.card.payment.CardIOActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="io.card.payment.DataEntryActivity" />
+        <!--微信支付回调-->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="wx79d0350178a9ff3a" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <!--查看mob推送日志-->
+        <!--<meta-data
+            android:name="com.mob.mobpush.debugLevel"
+            android:value="4" />-->
+        <!--配置华为-->
+        <!--<receiver android:name="com.mob.pushsdk.plugins.huawei.PushHaiWeiRevicer">
+            <intent-filter>
+                <action android:name="com.huawei.android.push.intent.REGISTRATION" />
+                <action android:name="com.huawei.android.push.intent.RECEIVE" />
+                <action android:name="com.huawei.android.push.intent.CLICK" />
+                <action android:name="com.huawei.intent.action.PUSH_STATE" />
+                <action android:name="com.huawei.intent.action.PUSH_DELAY_NOTIFY" />
+            </intent-filter>
+        </receiver>-->
+        <!--高德地图-->
+        <service android:name="com.amap.api.location.APSService" />
+        <!--开发者申请的key-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="093dd2db7b16146c30ad53a1645b1bad"></meta-data>
+        <!--全面屏适配-->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+        <!--适配华为（huawei）刘海屏-->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+        <!--适配小米（xiaomi）刘海屏-->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+        <!--7.0限制-私有目录被限制访问-->
+        <!--exported:要求必须为false，为true则会报安全异常。
+        grantUriPermissions:true，表示授予 URI 临时访问权限。-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider" />
+        </provider>
+        <!--9.0-->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
     </application>
 
 </manifest>

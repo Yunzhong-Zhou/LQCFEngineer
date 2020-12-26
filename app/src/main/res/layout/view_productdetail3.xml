@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/head3_pinglun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yuanjiao_10_baise_top"
+        android:drawableRight="@mipmap/ic_next_black"
+        android:padding="13dp"
+        android:text="用户评论（0）"
+        android:textColor="@color/black3"
+        android:textSize="14sp" />
+
+    <com.chetu.engineer.view.LoadingLayout
+        android:id="@+id/loading_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.liaoinstan.springview.widget.SpringView
+            android:id="@+id/springView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/view3_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.liaoinstan.springview.widget.SpringView>
+    </com.chetu.engineer.view.LoadingLayout>
+
+</LinearLayout>

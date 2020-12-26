@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yuanjiao_10_baise"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--<TextView
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="13dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:text="标题"
+                    android:textColor="@color/black" />-->
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="请输入招聘职位"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/xian" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--<TextView
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="13dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:text="标题"
+                    android:textColor="@color/black" />-->
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="请输入门店名称"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/xian" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--<TextView
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="13dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:text="标题"
+                    android:textColor="@color/black" />-->
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="请输入联系电话"
+                    android:paddingLeft="13dp"
+                    android:inputType="phone"
+                    android:paddingRight="13dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/xian" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--<TextView
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="13dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:text="活动地点"
+                    android:textColor="@color/black" />-->
+
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="请输入薪资"
+                    android:inputType="none"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/xian" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <!--<TextView
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="13dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:text="活动类型"
+                    android:textColor="@color/black" />-->
+
+                <EditText
+                    android:id="@+id/editText5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="请输入上班地址"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/yuanjiao_10_baise"
+            android:orientation="vertical">
+
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="13dp"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:text="活动内容"
+                android:textColor="@color/black" />-->
+
+            <EditText
+                android:id="@+id/editText6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:gravity="top"
+                android:hint="请输入职位要求"
+                android:minLines="5"
+                android:padding="13dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/yuanjiao_5_lanse"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:padding="15dp"
+            android:text="发布"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</ScrollView>

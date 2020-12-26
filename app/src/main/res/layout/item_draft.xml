@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/yuanjiao_10_baise"
+        android:elevation="3dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_list_black" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@color/xian" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_next_black" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingTop="13dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="13dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="已选："
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="删除"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:paddingTop="8dp"
+                android:gravity="center"
+                android:paddingBottom="8dp"
+                android:background="@drawable/yuanjiao_5_heise"
+                />
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="匹配商家"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:layout_marginLeft="15dp"
+                android:paddingBottom="8dp"
+                android:background="@drawable/yuanjiao_5_lanse"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

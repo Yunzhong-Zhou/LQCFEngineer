@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="13dp"
+    android:paddingRight="8dp">
+
+    <ImageView
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@mipmap/ic_wentu_red" />
+
+    <TextView
+        android:id="@+id/tv_wenti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="Content"
+        android:padding="5dp"
+        android:textColor="@color/black3"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_huida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="0个回答"
+        android:padding="5dp"
+        android:textColor="@color/black3"
+        android:textSize="12sp" />
+</LinearLayout>

@@ -6,19 +6,62 @@ android {
 
     defaultConfig {
         applicationId "com.chetu.chetuengineer"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64','arm64-v8a'
+        }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    //签名
+    signingConfigs {
+        release {
+            keyAlias 'chetuengineer'
+            keyPassword '123456'
+            storeFile file('/Users/YunZhong/Desktop/车途/chetuengineer.keystore')
+            storePassword '123456'
+        }
+//        keytool -list -v -keystore /Users/YunZhong/Desktop/车途/chetuengineer.keystore -alias chetuengineer -storepass 123456 -keypass 123456
+    }
     buildTypes {
         release {
+            //是否混淆
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            //是否移除无用资源
+            zipAlignEnabled true
+            //混淆的配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    //二维码框架需要
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
     }
 }
 
@@ -30,4 +73,164 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    
+    implementation 'com.android.support:multidex:1.0.3'
+    //recyclerView封装
+    implementation 'com.zhy:base-rvadapter:3.0.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //网络请求、解析
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.okhttp3:okhttp:4.7.2'
+//    implementation 'com.loopj.android:android-async-http:1.4.9'
+//    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+//    implementation 'com.alibaba:fastjson:1.2.68'
+
+    //加载网络图片
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    //图片压缩
+    implementation 'id.zelory:compressor:2.1.0'
+    //圆形图片
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //图片点击放大
+    implementation 'com.bm.photoview:library:1.4.1'
+    //图片选择器
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.6'
+
+    //侧滑删除
+    implementation 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
+    //banner
+    implementation 'com.youth.banner:banner:2.0.10'
+
+    //沉浸式
+    // 基础依赖包，必须要依赖
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    // fragment快速实现（可选）
+//    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0-beta03'
+
+    //自定义阴影库
+    implementation 'com.lijiankun24:shadowlayout:1.1.0'
+
+    //底部选项栏
+//    implementation 'com.hjm:BottomTabBar:1.2.2'
+    implementation 'com.github.Vincent7Wong:EasyNavigation:2.0.5'
+
+    //流式布局-标签
+    implementation 'com.github.AnJiaoDe:MultiFlowLayout:V1.1.2'
+
+    //toast提示框
+    implementation 'com.hjq:toast:8.2'
+
+    //侧滑返回
+    implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
+
+    //下拉刷新、上拉加载更多
+    //SpringView核心库 (只包含DefaultHeader/Footer)
+    implementation 'com.liaoinstan.springview:library:1.7.0'
+
+    //以下是各个风格的Header/Footer，选择自己喜欢的引入
+//    implementation 'com.liaoinstan.springview:AcfunHeader:1.7.0'         //AcFun style （header and footer）
+    implementation 'com.liaoinstan.springview:AliHeader:1.7.0'
+    //Alitrip style （header and footer）
+//    implementation 'com.liaoinstan.springview:MeituanHeader:1.7.0'       //Meituan style （header and footer）
+//    implementation 'com.liaoinstan.springview:RotationHeader:1.7.0'      //Mechanical gear style （header and footer）
+//    implementation 'com.liaoinstan.springview:WeixinHeader:1.7.0'        //WeChat Mini Program header（only header）
+//    implementation 'com.liaoinstan.springview:DuHeader:1.7.0'		//Du app header（only header）
+
+    //异常上报-腾讯bugly
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+
+    //apk更新
+    implementation 'com.github.maning0303:MNUpdateAPK:V2.0.3'
+
+    //城市联动选择
+    implementation 'liji.library.dev:citypickerview:4.1.1'//底部选择器
+    implementation 'com.zaaach:citypicker:2.0.3'//页面选择
+
+    //时间选择器
+    implementation 'com.contrarywind:Android-PickerView:4.1.8'
+
+    //评星控件
+    implementation 'com.github.giswangsj:AndRatingBar:1.0.4'
+
+    //自定义弹框
+    implementation 'com.github.AnJiaoDe:BaseDialog:V1.1.8'
+
+    //zxing 二维码框架
+    implementation 'com.google.zxing:core:3.4.0'
+
+    //二维码扫码封装 基于zBar
+    implementation 'com.github.MZCretin:ScanCode:1.0.0'//版本2.0.1 无返回
+    //动态申请权限
+    implementation 'com.github.MZCretin:FanPermission:1.0.0'
+
+    //格式化银行卡号 并识别出所属银行
+    implementation 'com.lsh.bankcardnum:banknumformatlibrary:1.0.2'
+
+    implementation 'io.card:android-sdk:5.5.1'
+
+    //二维码/条码识别、身份证识别、银行卡识别、车牌识别、图片文字识别、黄图识别、驾驶证（驾照）识别
+    implementation 'com.shouzhong:Scanner:1.1.2'
+    // zxing
+    implementation 'com.google.zxing:core:3.3.3'
+    // zbar (注：与二维码扫码有冲突)
+//    implementation 'com.shouzhong:ScannerZBarLib:1.0.0'
+    // 银行卡识别
+    implementation 'com.shouzhong:ScannerBankCardLib:1.0.3'
+    // 身份证识别
+//    implementation 'com.shouzhong:ScannerIdCardLib:1.0.4'
+    // 车牌识别
+    implementation 'com.shouzhong:ScannerLicensePlateLib:1.0.3'
+    // 图片文字识别
+//    implementation 'com.shouzhong:ScannerTextLib:1.0.0'
+    // 黄图识别
+//    implementation 'com.shouzhong:ScannerNsfwLib:1.0.0'
+    // 驾驶证识别
+//    implementation 'com.shouzhong:ScannerDrivingLicenseLib:1.0.0'
+    // 身份证识别（第二种方式）
+//    implementation 'com.shouzhong:ScannerIdCard2Lib:1.0.0'
+
+    //微信
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+
+    //高德定位(猎鹰jar包 包含了定位包)
+    implementation 'com.amap.api:location:latest.integration'
+    implementation 'com.amap.api:navi-3dmap:latest.integration'//导航(包含了3D地图)
+    implementation 'com.amap.api:search:latest.integration'//搜索
+
 }
+/*apply plugin: 'com.mob.sdk'
+MobSDK {
+    appKey ""
+    appSecret ""
+    MobPush {
+        bradge true//设置是否开启角标开关
+        devInfo {
+            HUAWEI {
+                appId "101920333"
+            }
+            MEIZU {
+                appId "129123"
+                appKey "6fe3e75d91414c38863f045332751a71"
+            }
+            XIAOMI {
+                appId "2882303761518347763"
+                appKey "5411834734763"
+            }
+            FCM {
+                iconRes "@mipmap/ic_launcher"
+            }
+            OPPO {
+                appKey "OPPO的appKey"
+                appSecret "OPPO的appSecret"
+            }
+            VIVO {
+                appId "VIVO的appId"
+                appKey  "VIVO的appSecret"
+            }
+
+        }
+    }
+}*/
+
+//apply plugin: 'com.google.gms.google-services'//谷歌服务

@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--发布的活动-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/yuanjiao_10_baise"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_title1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="13dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="发布的活动（0）"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_zhankai1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableRight="@mipmap/ic_zankai"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="展开"
+                        android:textColor="@color/black3"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_more1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableRight="@mipmap/ic_shouqi"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="查看更多的活动"
+                    android:textColor="@color/black3"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+            <!--发布的招聘-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/yuanjiao_10_baise"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="13dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="发布的招聘（0）"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_zhankai2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableRight="@mipmap/ic_zankai"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="展开"
+                        android:textColor="@color/black3"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_more2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableRight="@mipmap/ic_shouqi"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="查看更多的活动"
+                    android:textColor="@color/black3"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+            <!--发布的技术交流-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/yuanjiao_10_baise"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_title3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="13dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="发布的技术交流（0）"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_zhankai3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableRight="@mipmap/ic_zankai"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="展开"
+                        android:textColor="@color/black3"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_more3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableRight="@mipmap/ic_shouqi"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="查看更多的活动"
+                    android:textColor="@color/black3"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+            <!--发布的维修案例-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/yuanjiao_10_baise"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_title4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="13dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="发布的维修案例（0）"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_zhankai4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableRight="@mipmap/ic_zankai"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="展开"
+                        android:textColor="@color/black3"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_more4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableRight="@mipmap/ic_shouqi"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="查看更多的活动"
+                    android:textColor="@color/black3"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+            <!--发布的求助-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/yuanjiao_10_baise"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_title5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="13dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="发布的求助（0）"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_zhankai5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableRight="@mipmap/ic_zankai"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="展开"
+                        android:textColor="@color/black3"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_more5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableRight="@mipmap/ic_shouqi"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="查看更多的活动"
+                    android:textColor="@color/black3"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+            <!--发布的工具租赁-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/yuanjiao_10_baise"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_title6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="13dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="发布的工具租赁（0）"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_zhankai6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableRight="@mipmap/ic_zankai"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="展开"
+                        android:textColor="@color/black3"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_more6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableRight="@mipmap/ic_shouqi"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="查看更多的活动"
+                    android:textColor="@color/black3"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+            <!--发布的店铺出租-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/yuanjiao_10_baise"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_title7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="13dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="发布的店铺出租（0）"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_zhankai7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableRight="@mipmap/ic_zankai"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="展开"
+                        android:textColor="@color/black3"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_more7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableRight="@mipmap/ic_shouqi"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="查看更多的活动"
+                    android:textColor="@color/black3"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+            <!--发布的库存配件-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/yuanjiao_10_baise"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_title8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="13dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="发布的库存配件（0）"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_zhankai8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableRight="@mipmap/ic_zankai"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="展开"
+                        android:textColor="@color/black3"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_more8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableRight="@mipmap/ic_shouqi"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="查看更多的活动"
+                    android:textColor="@color/black3"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!--横向菜单栏-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tab1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--列表数据-->
+    <com.chetu.engineer.view.LoadingLayout
+        android:id="@+id/loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.liaoinstan.springview.widget.SpringView
+            android:id="@+id/springView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="10dp" />
+        </com.liaoinstan.springview.widget.SpringView>
+
+    </com.chetu.engineer.view.LoadingLayout>
+
+</LinearLayout>

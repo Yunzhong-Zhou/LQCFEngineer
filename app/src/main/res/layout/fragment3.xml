@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.liaoinstan.springview.widget.SpringView
+        android:id="@+id/springView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--搜索框-->
+                <LinearLayout
+                    android:id="@+id/headView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_addr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@mipmap/ic_addr_black"
+                        android:drawablePadding="5dp"
+                        android:maxEms="8"
+                        android:padding="14dp"
+                        android:singleLine="true"
+                        android:text="地址"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/yuanjiao_15_huise1"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:visibility="visible">
+
+                        <com.chetu.engineer.view.sidebar.CustomEditText
+                            android:id="@+id/et_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/transparent"
+                            android:drawableLeft="@mipmap/ic_search_gray"
+                            android:drawableRight="@mipmap/ic_edit_text_delbtn"
+                            android:drawablePadding="5dp"
+                            android:freezesText="true"
+                            android:focusable="false"
+                            android:gravity="center_vertical"
+                            android:hint="搜索您想要的车或品牌"
+                            android:imeOptions="actionSearch"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="#B2B2B2"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tv_scan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="7dp"
+                        android:paddingBottom="10dp"
+                        android:src="@mipmap/ic_scan_black" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_xiaoxi"
+                        android:layout_width="44dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:paddingTop="14dp"
+                            android:paddingRight="14dp"
+                            android:paddingBottom="14dp"
+                            android:src="@mipmap/ic_message_black1" />
+
+                        <TextView
+                            android:id="@+id/tv_xiaoxinum"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/yuanxing_hongse"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <!--banner-->
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:indicator_normal_color="@color/transparentwhite2"
+                    app:indicator_normal_width="8dp"
+                    app:indicator_selected_color="@color/white"
+                    app:indicator_selected_width="10dp"
+                    app:indicator_space="6dp" />
+                <!--菜单栏-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/yuanjiao_10_baise">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_tab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+                <!--横向菜单栏-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <!--列表数据-->
+                <com.chetu.engineer.view.LoadingLayout
+                    android:id="@+id/loading_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="10dp"/>
+
+                </com.chetu.engineer.view.LoadingLayout>
+
+                <!--&lt;!&ndash;热门活动&ndash;&gt;
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/yuanjiao_10_baise"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="13dp"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:text="热门活动"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_more1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawableRight="@mipmap/ic_next_black_samall"
+                            android:drawablePadding="4dp"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="加载更多"
+                            android:textColor="@color/black3"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                &lt;!&ndash;维修案例&ndash;&gt;
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/yuanjiao_10_baise"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="13dp"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:text="维修案例"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_more2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawableRight="@mipmap/ic_next_black_samall"
+                            android:drawablePadding="4dp"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="加载更多"
+                            android:textColor="@color/black3"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                &lt;!&ndash;机友求助&ndash;&gt;
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/yuanjiao_10_baise"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="13dp"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:text="机友求助"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_more3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawableRight="@mipmap/ic_next_black_samall"
+                            android:drawablePadding="4dp"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="加载更多"
+                            android:textColor="@color/black3"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                &lt;!&ndash;工具租聘&ndash;&gt;
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/yuanjiao_10_baise"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="13dp"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:text="工具租聘"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_more4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawableRight="@mipmap/ic_next_black_samall"
+                            android:drawablePadding="4dp"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="加载更多"
+                            android:textColor="@color/black3"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                &lt;!&ndash;店铺出租&ndash;&gt;
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/yuanjiao_10_baise"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="13dp"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:text="店铺出租"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_more5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawableRight="@mipmap/ic_next_black_samall"
+                            android:drawablePadding="4dp"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="加载更多"
+                            android:textColor="@color/black3"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                &lt;!&ndash;技术交流&ndash;&gt;
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/yuanjiao_10_baise_top"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="13dp"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:text="技术交流"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_more6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawableRight="@mipmap/ic_next_black_samall"
+                            android:drawablePadding="4dp"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="加载更多"
+                            android:textColor="@color/black3"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-10dp" />
+
+                </LinearLayout>-->
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </com.liaoinstan.springview.widget.SpringView>
+</RelativeLayout>
