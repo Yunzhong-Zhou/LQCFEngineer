@@ -9,8 +9,8 @@ public class URLs {
     public static String HOST = "http://app.leqi.cool";//接口地址
     public static String KFHOST = "http://chat.leqi.cool";//客服地址*/
     //正式地址
-    public static String IMGHOST = "http://img.leqi.cool/";//图片地址
-    public static String HOST = "http://app.leqi.cool";//接口地址
+    public static String IMGHOST = "http://img.leqi.work/";//图片地址
+    public static String HOST = "http://app.leqi.work";//接口地址
     public static String KFHOST = "http://chat.leqi.cool";//客服地址
 
 

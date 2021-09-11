@@ -64,7 +64,6 @@ public class Fragment1 extends BaseFragment {
 
     RelativeLayout rl_peijian, rl_qiuzhu;
 
-
     TextView tv_more1, tv_more2, tv_more3, tv_more4;
     RecyclerView recyclerView1;
     List<Fragment1Model.InquiryListBean> list1 = new ArrayList<>();

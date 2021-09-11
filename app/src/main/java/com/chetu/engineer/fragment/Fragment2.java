@@ -325,6 +325,10 @@ public class Fragment2 extends BaseFragment {
                 break;
             case R.id.rl_duijiangji:
                 //对讲机
+                String url1 = "http://walkietalkieh5.yxy5g.com/#/pages/main?token=" + localUserInfo.getToken();
+                Bundle bundle2 = new Bundle();
+                bundle2.putString("url", url1);
+                CommonUtil.gotoActivityWithData(getActivity(), WebContentActivity.class, bundle2, false);
                 break;
             case R.id.rl_jieche:
                 //扫描接车
