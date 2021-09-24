@@ -35,7 +35,7 @@ import okhttp3.Response;
 public class BaoJiaDetailActivity extends BaseActivity {
     MyBaoJiaModel.ListBean model;
     ImageView iv_carlogo;
-    TextView tv_carname, tv_carnum, tv_cardetail, tv_qingkuangshuoming;
+    TextView tv_carname, tv_carnum, tv_cardetail, tv_qingkuangshuoming,tv_confirm ;
     RecyclerView recyclerView;
 
     String y_inquiry_demand_project_id_str = "", v_price_str = "";
@@ -62,7 +62,8 @@ public class BaoJiaDetailActivity extends BaseActivity {
         recyclerView = findViewByID_My(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        TextView tv_confirm = findViewByID_My(R.id.tv_confirm);
+        tv_confirm = findViewByID_My(R.id.tv_confirm);
+
         tv_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,10 +172,12 @@ public class BaoJiaDetailActivity extends BaseActivity {
                     tv_daibaojia.setVisibility(View.VISIBLE);
                     et_baojia.setVisibility(View.GONE);
                     tv_daibaojia.setText(model.getOffer_list().get(0).getUser_info().getUserName()+"-" + model.getOffer_list().get(0).getVPrice());
+                    tv_confirm.setVisibility(View.GONE);
                 } else {
                     //无报价
                     tv_daibaojia.setVisibility(View.GONE);
                     et_baojia.setVisibility(View.VISIBLE);
+                    tv_confirm.setVisibility(View.VISIBLE);
                 }
 
                 //提交报价
